@@ -5,8 +5,7 @@
 
 import scrapy
 
-
-class AmazomWebcrawlerItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class LaptopItem(scrapy.Item):
+    name = scrapy.Field()
+    price = scrapy.Field()
+    display_size = scrapy.Field()

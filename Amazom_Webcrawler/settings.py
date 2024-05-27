@@ -17,7 +17,7 @@ NEWSPIDER_MODULE = "Amazom_Webcrawler.spiders"
 #USER_AGENT = "Amazom_Webcrawler (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -42,6 +42,11 @@ ROBOTSTXT_OBEY = True
 #    "Accept-Language": "en",
 #}
 
+
+DOWNLOAD_HANDLERS = {
+    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+}
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
@@ -62,9 +67,7 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    "Amazom_Webcrawler.pipelines.AmazomWebcrawlerPipeline": 300,
-#}
+ITEM_PIPELINES = {'Amazom_Webcrawler.pipelines.SQLAlchemyPipeline': 1}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
