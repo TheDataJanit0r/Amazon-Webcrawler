@@ -12,7 +12,7 @@ class Laptop(Base):
     display_size = Column(String)
 class SQLAlchemyPipeline(object):
     def __init__(self):
-        db_uri = 'postgresql://postgres:IV28PPLqrVxZY9pmaVhg@scrapper-db.c5tnjwee5tzt.eu-central-1.rds.amazonaws.com:5432'  # replace with your actual URI
+        db_uri = 'postgresql://postgres:password@db_url:5432'  # replace with your actual URI
         self.db_engine = create_engine(db_uri)
         self.Session = sessionmaker(bind=self.db_engine)
         Base.metadata.drop_all(self.db_engine)  # Drop all tables
