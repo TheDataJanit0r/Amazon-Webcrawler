@@ -17,6 +17,7 @@ class Amazon_Webcrawler(scrapy.Spider):
     
     def start_requests(self):
         url = "https://www.amazon.de/s?k=macbook"
+        self.logger.info(f"{Fore.CYAN}Starting Amazon scraping at {url}{Style.RESET_ALL}")
         
         yield scrapy.Request(
             url=url,

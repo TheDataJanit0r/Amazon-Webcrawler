@@ -19,7 +19,7 @@ DOWNLOADER_MIDDLEWARES = {
 }
 
 # Add your single Zyte API key here (choose ONE of the two keys you used)
-ZYTE_API_KEY = "9ac33bee15ec4a28bdedc7a7992696a0"
+ZYTE_API_KEY = "YOUR_ZYTE_API_KEY"
 
 # Configure SSL certificates
 # Add this to resolve SSL certificate issues
